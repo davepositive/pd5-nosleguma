@@ -1,0 +1,64 @@
+from gui.app_gui import run_app
+
+if __name__ == "__main__":
+    run_app()
+
+    import sqlite3
+
+def connect():
+    return sqlite3.connect("data/app.db")
+
+def create_tables():
+    conn = connect()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        username TEXT,
+        password TEXT
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS tasks (
+        id INTEGER PRIMARY KEY,
+        task TEXT,
+        done INTEGER,
+        user_id INTEGER
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+    from database import connect
+
+def login(username, password):
+    conn = connect()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password))
+    user = cursor.fetchone()
+
+    conn.close()
+    return user
+
+    def run_app():
+    root.mainloop()
+
+    # Mājasdarbu pārvaldnieks
+
+## Apraksts
+Python programma mājasdarbu organizēšanai ar GUI.
+
+## Funkcijas
+- Pievienot uzdevumus
+- Dzēst uzdevumus
+- Atzīmēt kā pabeigtus
+- Lietotāja pieslēgšanās
+
+## Instalācija
+```bash
+pip install -r requirements.txt
+

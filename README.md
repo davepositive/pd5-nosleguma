@@ -1,14 +1,21 @@
 # Mājasdarbu pārvaldnieks
 
 ## Apraksts
-Python programma mājasdarbu organizēšanai ar GUI.
+Python programma mājasdarbu organizēšanai ar grafisko saskarni.
 
 ## Funkcijas
-- Pievienot uzdevumus
-- Dzēst uzdevumus
-- Atzīmēt kā pabeigtus
 - Lietotāja pieslēgšanās
+- Uzdevumu pievienošana
+- Uzdevumu dzēšana
+- Datu saglabāšana SQLite datubāzē
+
+## Izmantotās tehnoloģijas
+- Python
+- Tkinter
+- SQLite
 
 ## Instalācija
+
 ```bash
 pip install -r requirements.txt
+python main.py

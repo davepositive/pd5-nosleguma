@@ -1,20 +1,3 @@
-project/
-│
-├── main.py
-├── database.py
-├── auth.py
-├── task_manager.py
-├── requirements.txt
-│
-├── gui/
-│   └── app_gui.py
-│
-├── data/
-│   └── app.db
-│
-├── README.md
-└── screenshots/
-
 from gui.app_gui import run_app
 
 if __name__ == "__main__":
